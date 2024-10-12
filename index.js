@@ -88,6 +88,11 @@ const promptUser = () => {
       message: 'Enter your Behance URL:',
       when: (answers) => answers.socialMedia.includes('behance'), // Only ask if Behance is selected
     },
+    {
+      type: 'confirm',
+      name: 'includeContactForm',
+      message: 'Would you like to include a contact form in your portfolio?',
+    },
   ]);
 };
 
@@ -124,10 +129,28 @@ const generateHTML = (data) => {
 
   // Replace placeholders with the actual data
   html = html.replace(/{{name}}/g, data.name)
-             .replace(/{{location}}/g, data.location)
-             .replace(/{{bio}}/g, data.bio)
-             .replace(/{{links}}/g, linksHTML);
-  
+    .replace(/{{location}}/g, data.location)
+    .replace(/{{bio}}/g, data.bio)
+    .replace(/{{links}}/g, linksHTML);
+
+  if (data.includeContactForm) {
+    html += `
+              <div class="contact-form">
+                  <form>
+                      <label for="name">Name:</label>
+                      <input type="text" id="name" name="name" required>
+                      
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" required>
+                      
+                      <label for="message">Message:</label>
+                      <textarea id="message" name="message" rows="4" required></textarea>
+                      
+                      <button type="submit">Submit</button>
+                  </form>
+              </div>`;
+  }
+
   return html;
 };
 
