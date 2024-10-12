@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{name}}'s Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>{{name}}</h1>
     <h2>Location: {{location}}</h2>
     <p class="bio">{{bio}}</p>
     <div class="links">
         <h3>Connect with me:</h3>
-        <a href="https://linkedin.com/{{linkedin}}" target="_blank">LinkedIn</a>
-        <a href="https://github.com/{{github}}" target="_blank">GitHub</a>
+        {{links}} <!-- This placeholder will be replaced with generated links -->
     </div>
     <footer>
         <p>Created using Slugfolio</p>
         <img src="Slugfolio Footer Image.png" alt="Banana Slug" class="slug-logo">
     </footer>
 </body>
+
 </html>

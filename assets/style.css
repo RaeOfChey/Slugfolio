@@ -1,0 +1,107 @@
+/* Global Styles #fffabf*/
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+h1 {
+    color: #000000;
+    font-size: 40px;
+    background-color: #ffe900;
+    padding: 20px 20px;
+    margin: 0px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    color: #000000;
+    font-size: 20px;
+    margin: 0px 0px 20px 0px;
+}
+
+/* Main Bio Section */
+main {
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+}
+
+.bio {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 50px 0px;
+}
+
+/* Links */
+.social-button {
+    font-size: 1.1em;
+    color: #ff66b2;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    border: 2px solid #ff66b2;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin: 0px 10px;
+    background-color: #ffe900;
+    width: 100px;
+    text-align: center;
+}
+
+.social-button:hover {
+    background-color: #ff66b2;
+    color: #ffe900;
+}
+
+/* Footer Banana SLug Yellow #ffe900; */
+footer {
+    background-color: #ffffff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #ff66b2;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.slug-logo {
+    height: 1.2em;
+    width: auto;
+    margin-left: 10px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    .bio {
+        font-size: 1.1em;
+    }
+
+    .links a {
+        font-size: 1em;
+    }
+}
