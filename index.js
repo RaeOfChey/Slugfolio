@@ -1,3 +1,4 @@
+// Updated imports and setup
 import fs from 'fs';
 import path from 'path';
 import inquirer from 'inquirer';
@@ -12,17 +13,17 @@ const promptUser = () => {
   return inquirer.prompt([
     {
       type: 'input',
-      name: 'name',  // Changed 'Name' to 'name' for consistency
+      name: 'name',
       message: 'What is your name?'
     },
     {
       type: 'input',
-      name: 'location', // Fixed typo from ';ocation' to 'location'
+      name: 'location',
       message: 'Where are you located?'
     },
     {
       type: 'input',
-      name: 'bio', // Changed 'Bio' to 'bio' for consistency
+      name: 'bio',
       message: 'Tell us a little about yourself:'
     },
     {
@@ -44,54 +45,65 @@ const promptUser = () => {
       type: 'input',
       name: 'linkedin',
       message: 'Enter your LinkedIn URL (just the handle, like "in/username"):',
-      when: (answers) => answers.socialMedia.includes('linkedin'), // Only ask if LinkedIn is selected
+      when: (answers) => answers.socialMedia.includes('linkedin'),
     },
     {
       type: 'input',
       name: 'github',
       message: 'Enter your GitHub URL:',
-      when: (answers) => answers.socialMedia.includes('github'), // Only ask if GitHub is selected
+      when: (answers) => answers.socialMedia.includes('github'),
     },
     {
       type: 'input',
       name: 'instagram',
       message: 'Enter your Instagram URL:',
-      when: (answers) => answers.socialMedia.includes('instagram'), // Only ask if Instagram is selected
+      when: (answers) => answers.socialMedia.includes('instagram'),
     },
     {
       type: 'input',
       name: 'dribbble',
       message: 'Enter your Dribbble URL:',
-      when: (answers) => answers.socialMedia.includes('dribbble'), // Only ask if Dribbble is selected
+      when: (answers) => answers.socialMedia.includes('dribbble'),
     },
     {
       type: 'input',
       name: 'patreon',
       message: 'Enter your Patreon URL:',
-      when: (answers) => answers.socialMedia.includes('patreon'), // Only ask if Patreon is selected
+      when: (answers) => answers.socialMedia.includes('patreon'),
     },
     {
       type: 'input',
       name: 'pinterest',
       message: 'Enter your Pinterest URL:',
-      when: (answers) => answers.socialMedia.includes('pinterest'), // Only ask if Pinterest is selected
+      when: (answers) => answers.socialMedia.includes('pinterest'),
     },
     {
       type: 'input',
       name: 'youtube',
       message: 'Enter your YouTube URL:',
-      when: (answers) => answers.socialMedia.includes('youtube'), // Only ask if YouTube is selected
+      when: (answers) => answers.socialMedia.includes('youtube'),
     },
     {
       type: 'input',
       name: 'behance',
       message: 'Enter your Behance URL:',
-      when: (answers) => answers.socialMedia.includes('behance'), // Only ask if Behance is selected
+      when: (answers) => answers.socialMedia.includes('behance'),
     },
     {
       type: 'confirm',
       name: 'includeContactForm',
       message: 'Would you like to include a contact form in your portfolio?',
+    },
+    {
+      type: 'confirm',
+      name: 'addProfilePicture',
+      message: 'Would you like to add a profile picture? You can upload your own.',
+    },
+    {
+      type: 'input',
+      name: 'profilePictureURL',
+      message: 'Provide the URL link to your profile picture:',
+      when: (answers) => answers.addProfilePicture,
     },
   ]);
 };
@@ -100,8 +112,9 @@ const promptUser = () => {
 const generateHTML = (data) => {
   const templatePath = path.join(__dirname, 'assets', 'template.html');
   let html = fs.readFileSync(templatePath, 'utf-8');
-  let linksHTML = ''; // Initialize linksHTML here
+  let linksHTML = '';
 
+  // Handle social media links
   if (data.socialMedia.includes('linkedin')) {
     linksHTML += `<a href="https://linkedin.com/${data.linkedin}" target="_blank" class="social-button linkedin-btn">LinkedIn</a>`;
   }
@@ -131,24 +144,26 @@ const generateHTML = (data) => {
   html = html.replace(/{{name}}/g, data.name)
     .replace(/{{location}}/g, data.location)
     .replace(/{{bio}}/g, data.bio)
+    .replace(/{{profilePicture}}/g, data.profilePictureURL) // Insert profile picture
     .replace(/{{links}}/g, linksHTML);
 
+  // Optionally include a contact form if the user requested it
   if (data.includeContactForm) {
     html += `
-              <div class="contact-form">
-                  <form>
-                      <label for="name">Name:</label>
-                      <input type="text" id="name" name="name" required>
-                      
-                      <label for="email">Email:</label>
-                      <input type="email" id="email" name="email" required>
-                      
-                      <label for="message">Message:</label>
-                      <textarea id="message" name="message" rows="4" required></textarea>
-                      
-                      <button type="submit">Submit</button>
-                  </form>
-              </div>`;
+        <div class="contact-form">
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>`;
   }
 
   return html;

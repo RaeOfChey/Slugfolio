@@ -9,6 +9,22 @@
     --color-white: #ffffff;
 }
 
+/* Profile Image */
+.profile-section {
+    text-align: center;
+}
+
+/* Profile Image */
+#profile-picture {
+    width: 100px;
+    margin: 10px 0px;
+}
+
+/* Optional Hover Effect */
+#profile-picture:hover {
+    transform: scale(1.05);
+}
+
 body {
     font-family: 'Quicksand', sans-serif;
     background-color: var(--color-white);
