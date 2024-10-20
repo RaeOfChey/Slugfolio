@@ -24,7 +24,7 @@
 ## Installation
 To use the application, follow these steps:
 
-- Step 1: Clone the repository by running git clone https://github.com/YourUsername/slugfolio.git in your terminal. 
+- Step 1: Clone the repository
 - Step 2: Navigate to the project directory by typing cd slugfolio.
 - Step 3: Once you're inside the folder, install the required dependencies by running npm install.
 
