@@ -29,11 +29,19 @@ To use the application, follow these steps:
 - Step 3: Once you're inside the folder, install the required dependencies by running npm install.
 
 ## Usage
-To start the application, run the following command: node index.js
+To start the application, run the following command: `node index.js`.
 
-The program will prompt you with a series of questions, such as your name, location, bio, and your LinkedIn and GitHub URLs. After providing these details, Slugfolio will automatically generate an HTML file containing your custom portfolio.
+When you execute this command, the program will prompt you with a series of questions, including:
+- Your name
+- Your location
+- A breif bio
+- Links to your socials
 
-You can open this file in your web browser to view your portfolio. If you’d like to personalize the look and feel of your page further, feel free to tweak the generated CSS to your liking!
+After you provide these details, Slugfolio will automatically generate an HTML file that contains your custom portfolio.
+
+You can then open this generated HTML file in your web browser to view your portfolio.
+
+If you want to personalize the look and feel of your page further, you can easily tweak the generated CSS to match your style.
 
 ## License
 This project is licensed under the MIT License, which allows you to freely use, modify, and distribute this software, provided proper attribution is given.
