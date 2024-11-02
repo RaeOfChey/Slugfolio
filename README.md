@@ -7,13 +7,19 @@
 2. [Features](#features)
 3. [Installation](#installation)
 4. [Usage](#usage)
-6. [License](#license)
-7. [Contributing](#contributing)
-8. [Tests](#tests)
-9. [Questions](#questions)
+5. [Tools and Technologies](#tools-and-technologies)
+6. [Dependencies and Installs](#dependencies-and-installs)
+7. [License](#license)
+8. [Contributing](#contributing)
+9. [Tests](#tests)
+10. [Questions](#questions)
 
 ## Description
-**Slugfolio** is a charming command-line tool that helps you slither into the world of portfolios. Just as a banana slug glides through the forest, you'll glide through the prompts, and Slugfolio will leave behind a trail of a beautifully crafted portfolio. Let Slugfolio do the crawling so you can shine in the spotlight!
+Slugfolio is a charming command-line tool that helps you slither into the world of portfolios. Just as a banana slug glides through the forest, you'll glide through the prompts, and Slugfolio will leave behind a trail of a beautifully crafted portfolio. Let Slugfolio do the crawling so you can shine in the spotlight!
+
+<img width="640  " alt="Example of dev work thumbnail image" src="https://github.com/user-attachments/assets/e1c626b5-8b9b-499f-8f09-974886c74927">
+
+Example of protfolio generated with Slugfolio
 
 ## Features
 - Inclue information about yourself such as: Name, location, and bio.
@@ -43,20 +49,31 @@ You can then open this generated HTML file in your web browser to view your port
 
 If you want to personalize the look and feel of your page further, you can easily tweak the generated CSS to match your style.
 
+## Tools and Technologies
+**Backend Technologies**:
+- Node.js
+- Inquirer
+
+**File System Operations**:
+- fs (File System)
+
+**HTML/CSS**:
+  - String Template Literals
+
+## Dependencies and Installs
+
+**NPM Packages**:
+  - `inquirer` - For prompting users for input via the command line.
+- `fs` - Native Node.js module for file system interactions (no installation required).
+
 ## License
 This project is licensed under the MIT License, which allows you to freely use, modify, and distribute this software, provided proper attribution is given.
 
 ## Contributing
-Contributions are welcome!  If you'd like to contribute to this project, follow the steps below.
-
-- Step 1: Fork the repository.
-- Step 2: Create a feature branch: git checkout -b feature/new-feature
-- Step 3: Commit your changes: git commit -m "Add new feature"
-- Step 4: Push to the branch: git push origin feature/new-feature
-- Step 5: Open a pull request.
+This project is part of a coding bootcamp assignment and is not open for contributions. To comply with the course requirements, I must complete this project individually without outside assistance. Therefore, pull requests, issues, or other contributions will not be accepted. Thank you for understanding!
 
 ## Tests
-Currently, this project does not have any automated tests. However, if you'd like to add tests, feel free to contribute! You can set up testing using a framework like Mocha or Jest.
+Currently, this project does not have any automated tests.
 
 ## Questions
-If you have any questions about the repository, feel free to reach out by opening an issue or contacting me directly at cheyennaraelynn@gmail.com You can also find more of my work on GitHu at https://github.com/RaeOfChey.
+If you have any questions about the repository, feel free to reach out by opening an issue or contacting me directly at cheyennaraelynn@gmail.com You can also find more of my work on GitHub at https://github.com/RaeOfChey.
